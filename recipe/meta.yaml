@@ -1,7 +1,6 @@
 {% set name = "django-picklefield" %}
 {% set version = "3.0.1" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,18 +10,18 @@ source:
   sha256: 15ccba592ca953b9edf9532e64640329cd47b136b7f8f10f2939caa5f9ce4287
 
 build:
-  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
+    - python >=3.0
     - django
     - pip
-    - python >=3.0
   run:
-    - django >=2.2,<3.0
     - python >=3.0
+    - django >=2.2
 
 test:
   imports:
@@ -40,4 +39,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - rxm7706
     - mxr-conda

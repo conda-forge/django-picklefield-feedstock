@@ -1,5 +1,5 @@
 {% set name = "django-picklefield" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-picklefield-{{ version }}.tar.gz
-  sha256: 15ccba592ca953b9edf9532e64640329cd47b136b7f8f10f2939caa5f9ce4287
+  sha256: c786cbeda78d6def2b43bff4840d19787809c8909f7ad683961703060398d356
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:

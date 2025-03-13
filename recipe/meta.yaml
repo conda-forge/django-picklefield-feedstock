@@ -1,5 +1,5 @@
 {% set name = "django-picklefield" %}
-{% set version = "3.2" %}
+{% set version = "3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-picklefield-{{ version }}.tar.gz
-  sha256: aa463f5d79d497dbe789f14b45180f00a51d0d670067d0729f352a3941cdfa4d
+  sha256: 4e76dd20f2e95ffdaf18d641226ccecc169ff0473b0d6bec746f3ab97c26b8cb
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -22,7 +22,9 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - django >=2.2
+    - django >=4.2
+    # - tox 
+    # - Django >=4.2
 
 test:
   imports:

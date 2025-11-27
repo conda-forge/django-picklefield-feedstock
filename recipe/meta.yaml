@@ -1,13 +1,13 @@
 {% set name = "django-picklefield" %}
-{% set version = "3.3" %}
+{% set version = "3.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-picklefield-{{ version }}.tar.gz
-  sha256: 4e76dd20f2e95ffdaf18d641226ccecc169ff0473b0d6bec746f3ab97c26b8cb
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 3a1f740536c0e60d0dba43aa89ccdbe86760d4c3f8ec47799eae122baa741d0a
 
 build:
   noarch: python
@@ -23,6 +23,8 @@ requirements:
   run:
     - python >={{ python_min }}
     - django >=4.2
+    # - tox 
+    # - Django >=4.2
     # - tox 
     # - Django >=4.2
 
